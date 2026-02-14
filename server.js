@@ -108,4 +108,8 @@ io.on('connection', (socket) => {
   socket.on('join-police', () => socket.join('police'));
 });
 
-server.listen(5000, () => console.log('🚀 FULL SYSTEM LIVE: http://localhost:5000'));
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  console.log(`🚀 Backend running on PORT ${PORT}`);
+  console.log('✅ Ready for Railway deployment!');
+});
