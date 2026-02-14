@@ -10,6 +10,13 @@ const io = socketIo(server, { cors: { origin: '*' } });
 
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.json({ 
+    message: "🚀 Smart Tourist Safety API - LIVE!", 
+    endpoints: ["/api/tourists", "/api/register", "/api/alerts"],
+    status: "Science Day 2026 Ready!"
+  });
+});
 
 let tourists = [];
 let alerts = [];
